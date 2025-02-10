@@ -1,0 +1,56 @@
+header{
+    display: block;
+    height: 64px;
+    grid-column: 1;
+    grid-template:1fr 1fr 1fr ;
+    grid: gap 2px;
+    align-content: center;
+    flex-direction: column;
+    }
+    .bar{
+        display: flex;
+    }
+.logo{
+    display: flex;
+    padding: 0;
+    font-weight: 700;
+    grid-column:1 2 ;
+    align-items: center;
+   
+}
+form{
+    display: flex;
+    padding: 10px 0px 0px 0px;
+   align-content: center;
+   margin: 0px 150px;
+   color: white;
+
+}
+img{
+    height: 40px;
+    width:40px;
+}
+p{
+    color: brown;
+    display: block;
+    margin: 0em 0.5em 0em 0.5em;
+    font-weight: 700;
+}
+span{
+    color: cadetblue;
+    font-weight: 700;
+}
+input{
+    flex-grow: 2;
+    background-color: black;
+    border: none;
+    width: 350px;
+    color: white;
+    
+}
+button{
+    background-color: aqua;
+    border: none;
+    margin: 0px 0px 0px 10px;
+    color: beige
+}
