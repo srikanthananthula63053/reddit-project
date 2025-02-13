@@ -1,4 +1,9 @@
 main{
     display: block;
     grid-column: 1rem;
+    padding: 1rem;
+}
+article{
+    display: block; 
+    
 }

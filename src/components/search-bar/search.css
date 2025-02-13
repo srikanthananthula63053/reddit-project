@@ -16,6 +16,7 @@ header{
     font-weight: 700;
     grid-column:1 2 ;
     align-items: center;
+    
    
 }
 form{
@@ -29,6 +30,10 @@ form{
 img{
     height: 40px;
     width:40px;
+   
+}
+.pics{
+    border-radius: 50%;
 }
 p{
     color: brown;
@@ -42,15 +47,17 @@ span{
 }
 input{
     flex-grow: 2;
-    background-color: black;
+    background-color: #181a1b;
     border: none;
     width: 350px;
     color: white;
     
 }
-button{
-    background-color: aqua;
-    border: none;
+.bts{
+    background-color: #181a1b;
+    border: solid-red;
     margin: 0px 0px 0px 10px;
-    color: beige
+    color: white;
+    cursor: pointer;
+    
 }
