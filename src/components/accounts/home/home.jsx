@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react"
+import { useState, useEffect } from "react"
 
 import data from "./data.json"
 
@@ -15,24 +15,43 @@ export function Home() {
   const [comments, setComments] = useState({}); // Store user input per post
   const [openCommentBox, setOpenCommentBox] = useState({});
 
+  console.log(profileData[0]?.data?.children[0]?.data?.author_fullname)
 
   useEffect(() => {
-    setProfile(profileData);
-    console.log("Profile Data:", profileData);
-  console.log("Children Array:", profileData?.data?.children);
-  console.log("First Child Data:", profileData?.data?.children[0]);
-  console.log("Author:", profileData?.data?.children?.[0]?.data?.author);
-  
-  }, []);
+    setProfile(profileData[0])
+  }, [])
 
-  
 
 
   const computeHoursAgo = (created_utc) => {
     const postTimestamp = created_utc * 1000; // Convert to milliseconds
     const currentTimestamp = Date.now();
     return Math.floor((currentTimestamp - postTimestamp) / (1000 * 60 * 60));
-  };
+  }
+
+const handleVote = (postId,type) =>{
+
+  setPost((prev)=>({
+    ...prev,
+    data:{
+      ...prev.data,
+      children: prev.data.children.map((child)=>
+      child.data.id === postId
+      ?{
+        ...child,
+        data: {
+          ...child.data,
+          score: type === "up" ? child.data.score + 1 : child.data.score - 1, // Increment or decrement score
+        },
+      }
+      : child
+    )
+    }
+  }))
+
+}
+
+
   const toggleCommentBox = (postId) => {
     setOpenCommentBox((prev) => ({
       ...prev,
@@ -86,7 +105,7 @@ export function Home() {
         <div key={child.data.id || index} className="card">
           <div className="post-warpper">
             <div className="post-votes-container">
-              <button type="button" className="up-icons-button">
+              <button type="button" className="up-icons-button" onClick={() => handleVote(child.data.id, "up")}>
                 <FaArrowUp />
               </button>
               <p className="post-votes-count">{child.data.score}</p>
@@ -148,14 +167,15 @@ export function Home() {
                       <div key={idx} className="comment-item">
                         <img
                           className="comment-profile"
-                          src="https://w7.pngwing.com/pngs/686/219/png-transparent-youtube-user-computer-icons-information-youtube-hand-silhouette-avatar-thumbnail.png"
+                          src={profile?.data?.children[0]?.data.url}
                           alt="Profile"
                         />
                         <div className="comment-content">
                           <div className="comment-header">
-                          <span className="username">
-      {profile?.data?.children[0]?.data?.author || "Loading..."}
-    </span>
+                            <span className="username">
+                              {profile?.data?.children.map((box, index) => (
+                                <p key={box.data.id}>{box.data.author}</p>)) || "Loading..."}
+                            </span>
                             <span className="time">
                               {child.data.created_utc
                                 ? `${computeHoursAgo(child.data.created_utc)} hours ago`
