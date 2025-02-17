@@ -1,0 +1,10 @@
+.main-layout {
+    display: flex;
+}
+
+ .content-area {
+    margin-left: -900px; /* Adjust according to sidebar width */
+     width: 100%; 
+     padding-top: 70px; 
+ 
+ }

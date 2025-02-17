@@ -1,0 +1,32 @@
+.asidebar {
+    width: 300px;
+    height: 1050vh;
+    background-color: #181a1b;
+    padding: 10px;
+    position: fixed;
+   
+
+    margin-left: 900px;
+}
+
+.button-list {
+    display: flex;
+    flex-direction: column;
+    background-color: #181a1b;
+    overflow: scroll;
+
+}
+button{
+    background-color: #181a1b;
+    color: #bdb7af;
+}
+h2{
+    color: #bdb7af; 
+   
+}
+
+.content {
+    margin-left: 0px; /* Ensure content starts after the sidebar */
+    padding: 20px;
+    width: 100%;
+}

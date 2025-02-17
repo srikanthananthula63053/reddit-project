@@ -109,7 +109,7 @@ const handleVote = (postId,type) =>{
                 <FaArrowUp />
               </button>
               <p className="post-votes-count">{child.data.score}</p>
-              <button type="button" className="down-icons-button">
+              <button type="button" className="down-icons-button" onClick={() => handleVote(child.data.id, "up")}>
                 <FaArrowDown />
               </button>
             </div>
