@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import './search.css';
 
-export function SearchBar(){
-    const[search,setSearch]=useState("")
+import './search.css';
+import { useState } from 'react';
+export function SearchBar({setSearchQuery}){
+    const [inputValue, setInputValue] = useState("")  
 
     return(
         <header>
@@ -11,14 +11,14 @@ export function SearchBar(){
                 <img className="pics" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiNvM-pnwD4yHhI-H5wYskjQgZ_K1YgPDsPA&s"/>
                 <p>Reddit<span>Minimal</span></p>
             </div>
-            <form>
+            <form onSubmit={(e) => e.preventDefault()}>
                 <input
                  placeholder="search here"
                   type="text"
-                  value={search}
-                  onChange={(event)=>setSearch(event.target.value)}
+                  value={inputValue}
+                  onChange={(event)=>setInputValue(event.target.value)}
                   />
-                <button type="submit" className='bts'>search</button>
+                <button type="submit" className='bts' onClick={() => setSearchQuery(inputValue)} >search</button>
             </form>
             </div>
         </header>
