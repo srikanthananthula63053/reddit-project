@@ -1,32 +1,53 @@
 .asidebar {
-    width: 300px;
-    height: 1050vh;
+    width: 25%;
+    padding: 20px;
     background-color: #181a1b;
-    padding: 10px;
-    position: fixed;
-   
+    flex-direction: column;
+    color: #a1988c;
 
-    margin-left: 900px;
 }
 
 .button-list {
+
+    background-color: #181a1b;
     display: flex;
     flex-direction: column;
-    background-color: #181a1b;
-    overflow: scroll;
 
 }
-button{
+
+.ho{
     background-color: #181a1b;
-    color: #bdb7af;
+    color: #a1988c;
+    padding: 5%;
+    border: none;
+    margin-right: 50%;
+    font-weight: 700;
+
+
 }
-h2{
-    color: #bdb7af; 
-   
+
+button img {
+    border-radius: 50%;
 }
+
+.ho:hover {
+    color: blue;
+    background-color: aliceblue;
+    width: 100%;
+}
+
 
 .content {
-    margin-left: 0px; /* Ensure content starts after the sidebar */
-    padding: 20px;
+    width: 95%;
+    padding: 50px;
+
+
+}
+
+.main-container {
+    display: flex;
+    align-items: flex-start;
+    background: #181a1b;
     width: 100%;
+
 }

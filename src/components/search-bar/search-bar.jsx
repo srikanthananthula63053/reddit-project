@@ -13,7 +13,7 @@ export function SearchBar(){
             </div>
             <form>
                 <input
-                 placeholder="search"
+                 placeholder="search here"
                   type="text"
                   value={search}
                   onChange={(event)=>setSearch(event.target.value)}

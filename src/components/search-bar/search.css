@@ -25,6 +25,7 @@ form{
    align-content: center;
    margin: 0px 150px;
    color: white;
+   
 
 }
 img{
@@ -51,13 +52,16 @@ input{
     border: none;
     width: 350px;
     color: white;
+    cursor: pointer;
+
+    
     
 }
-.bts{
+.bts {
     background-color: #181a1b;
     border: solid-red;
     margin: 0px 0px 0px 10px;
     color: white;
-    cursor: pointer;
+    cursor: pointer;   
     
 }
